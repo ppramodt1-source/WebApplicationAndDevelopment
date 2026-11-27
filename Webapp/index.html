@@ -1,148 +1,161 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>IPL Ticket Booking</title>
+
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <h1>IPL Ticket Booking</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#matches">Matches</a>
-            <a href="#booking">Book Tickets</a>
-            <a href="#mybookings">My Bookings</a>
-            <a href="#guidelines">Guidelines</a>
-        </nav>
-    </header>
+<header>
+    <h1>IPL Tickets</h1>
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <h2>Welcome to IPL Ticket Booking</h2>
-        <p>Book your favourite IPL match tickets easily!</p>
-        <a href="#booking" class="btn">Book Now</a>
-    </section>
+    <button id="menu" aria-label="Toggle navigation">
+        ☰
+    </button>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About IPL</h2>
-        <p>
-            The Indian Premier League (IPL) is one of the most exciting cricket
-            tournaments in the world. Enjoy live cricket action and support your
-            favourite team by booking your tickets online.
-        </p>
-    </section>
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#matches">Matches</a>
+        <a href="#booking">Booking</a>
+        <a href="#mybookings">My Bookings</a>
+        <a href="#guidelines">Guidelines</a>
+    </nav>
+</header>
 
-    <!-- Matches Section -->
-    <section id="matches" class="section">
-        <h2>Upcoming Matches</h2>
+<section id="home">
+    <h2>Welcome to IPL Ticket Booking</h2>
+    <p>Book your favourite match tickets!</p>
+    <a href="#booking" class="btn">Book Now</a>
+</section>
 
-        <div class="match-container">
-            <div class="match-card">
-                <h3>RCB vs CSK</h3>
-                <p>Venue: Bengaluru</p>
-                <p>Match: IPL League Match</p>
-            </div>
+<section id="matches">
 
-            <div class="match-card">
-                <h3>MI vs KKR</h3>
-                <p>Venue: Mumbai</p>
-                <p>Match: IPL League Match</p>
-            </div>
+    <h2>Match Schedule</h2>
 
-            <div class="match-card">
-                <h3>SRH vs RR</h3>
-                <p>Venue: Hyderabad</p>
-                <p>Match: IPL League Match</p>
-            </div>
+    <select id="filter">
+        <option value="all">All Teams</option>
+        <option>RCB</option>
+        <option>CSK</option>
+        <option>MI</option>
+        <option>KKR</option>
+        <option>SRH</option>
+        <option>RR</option>
+        <option>DC</option>
+        <option>PBKS</option>
+        <option>GT</option>
+        <option>LSG</option>
+    </select>
+
+    <div class="view-buttons">
+        <button id="grid">Grid</button>
+        <button id="list">List</button>
+    </div>
+
+    <div id="matchCards" class="grid">
+
+        <div class="card" data-teams="RCB CSK">
+            RCB vs CSK
         </div>
-    </section>
 
-    <!-- Booking Section -->
-    <section id="booking" class="section">
-        <h2>Book Your Tickets</h2>
-
-        <div class="booking-container">
-
-            <!-- Booking Form -->
-            <form id="bookingForm">
-
-                <label for="match">Select Match:</label>
-                <select id="match" required>
-                    <option value="">-- Select Match --</option>
-                    <option value="RCB vs CSK">RCB vs CSK</option>
-                    <option value="MI vs KKR">MI vs KKR</option>
-                    <option value="SRH vs RR">SRH vs RR</option>
-                </select>
-
-                <label for="stand">Select Stand Category:</label>
-                <select id="stand" required>
-                    <option value="">-- Select Stand --</option>
-                    <option value="General">General - ₹500</option>
-                    <option value="Silver">Silver - ₹1500</option>
-                    <option value="Premium">Premium - ₹2500</option>
-                    <option value="VIP">VIP - ₹5000</option>
-                </select>
-
-                <label for="quantity">Ticket Quantity:</label>
-                <input type="number" id="quantity" min="1" max="10" value="1" required>
-
-                <button type="submit" class="btn">Confirm Booking</button>
-            </form>
-
-            <!-- Booking Summary Card -->
-            <div class="summary-card">
-                <h3>Booking Summary</h3>
-
-                <p><strong>Match:</strong> <span id="summaryMatch">Not selected</span></p>
-                <p><strong>Stand:</strong> <span id="summaryStand">Not selected</span></p>
-                <p><strong>Quantity:</strong> <span id="summaryQuantity">1</span></p>
-                <p><strong>Price per Ticket:</strong> <span id="summaryPrice">₹0</span></p>
-
-                <hr>
-
-                <h2>Total: <span id="totalPrice">₹0</span></h2>
-
-                <p id="summaryMessage">Select match and stand to see your total.</p>
-            </div>
-
+        <div class="card" data-teams="MI KKR">
+            MI vs KKR
         </div>
-    </section>
 
-    <!-- My Bookings Section -->
-    <section id="mybookings" class="section">
-        <h2>My Bookings</h2>
-        <div id="bookingList">
-            <p>No bookings yet. Book your tickets above!</p>
+        <div class="card" data-teams="SRH RR">
+            SRH vs RR
         </div>
-    </section>
 
-    <!-- Guidelines Section -->
-    <section id="guidelines" class="section">
-        <h2>Booking Guidelines</h2>
-        <ul>
-            <li>Select your preferred match.</li>
-            <li>Select a stand category.</li>
-            <li>Choose the number of tickets.</li>
-            <li>Check the Booking Summary and total price.</li>
-            <li>Click Confirm Booking to book your tickets.</li>
-            <li>Maximum 10 tickets per booking.</li>
-        </ul>
-    </section>
+        <div class="card" data-teams="DC PBKS">
+            DC vs PBKS
+        </div>
 
-    <!-- Toast Notification -->
-    <div id="toast"></div>
+        <div class="card" data-teams="GT LSG">
+            GT vs LSG
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 IPL Ticket Booking. All rights reserved.</p>
-    </footer>
+        <div class="card" data-teams="CSK MI">
+            CSK vs MI
+        </div>
 
-    <script src="../JS/app.js"></script>
+    </div>
+
+</section>
+
+<section id="booking">
+
+    <h2>Book Tickets</h2>
+
+    <form id="form">
+
+        <select id="match" required>
+            <option value="">Select Match</option>
+            <option>RCB vs CSK</option>
+            <option>MI vs KKR</option>
+            <option>SRH vs RR</option>
+            <option>DC vs PBKS</option>
+            <option>GT vs LSG</option>
+            <option>CSK vs MI</option>
+        </select>
+
+        <select id="stand" required>
+            <option value="">Select Stand</option>
+            <option value="General">General - ₹500</option>
+            <option value="Silver">Silver - ₹1500</option>
+            <option value="Premium">Premium - ₹2500</option>
+            <option value="VIP">VIP - ₹5000</option>
+        </select>
+
+        <input type="number" id="qty"
+               min="1" max="10" value="1" required>
+
+        <button type="submit" class="btn">
+            Confirm Booking
+        </button>
+
+    </form>
+
+    <div id="summary">
+        <h3>Booking Summary</h3>
+        <p id="details">Select match and stand</p>
+        <h3 id="total">Total: ₹0</h3>
+    </div>
+
+</section>
+
+<section id="mybookings">
+
+    <h2>My Bookings</h2>
+
+    <div id="bookings">
+        No bookings yet.
+    </div>
+
+</section>
+
+<section id="guidelines">
+
+    <h2>Guidelines</h2>
+
+    <div class="guides">
+        <div>🎫 Select your match</div>
+        <div>🏟️ Choose your stand</div>
+        <div>💰 Check ticket price</div>
+    </div>
+
+</section>
+
+<footer>
+    IPL Ticket Booking © 2026
+</footer>
+
+<script src="../JS/app.js"></script>
+
 </body>
 </html>
