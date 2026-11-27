@@ -1,0 +1,70 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Header */
+header {
+    background-color: #14213d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #ff6b00;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+}
+
+/* Home section */
+#home {
+    background-color: #14213d;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#home h2 {
+    font-size: 40px;
+}
+
+#home p {
+    font-size: 20px;
+}
+
+/* Links as buttons */
+#home a {
+    display: inline-block;
+    background-color: #ff6b00;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Other sections */
+section {
+    padding: 30px;
+    margin: 20px;
+    background-color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #14213d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
